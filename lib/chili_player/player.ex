@@ -1,7 +1,9 @@
+# Files to Help in requests
 defmodule ChiliPlayer.Player do
 
-  def start(options \\ []) do
-    [:ok, token] = options
+  defp header_request do
   end
 
+  defp endpoint_url do
+  end
 end
