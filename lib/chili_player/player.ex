@@ -31,9 +31,39 @@ defmodule ChiliPlayer.Player do
         body
         |> Poison.decode(keys: :atoms)
         |> case do
-           {:ok, parsed} -> {ok, parsed}
-           _ -> {:error, body}
-        end
-    end).()
+             {:ok, parsed} -> {ok, parsed}
+             _ -> {:error, body}
+          end
+       end).()
+  end
+
+  def upload(options \\ %{}, headers \\ []) do
+    params = %{"video" => options}
+    {:ok, body} =  Poison.encode params
+    @player_api_url
+    |> HTTPoison.post(body, headers)
+    |> case do
+        {:ok, %{body: raw, status_code: code}} -> {code, raw}
+        {:error, %{reason: reason}} -> {:error, reason}
+       end
+    |> (fn {ok, body} ->
+          body
+          |> Poison.decode(keys: :atoms)
+          |> case do
+               {:ok, parsed} -> {ok, parsed}
+               _ -> {:error, body}
+             end
+       end).()
+  end
+
+  def update(options \\ %{}, headers \\ []) do
+    params = %{"video" => options}
+  end
+
+  def delete do
   end
 end
+
+
+
+
