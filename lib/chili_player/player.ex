@@ -75,7 +75,21 @@ defmodule ChiliPlayer.Player do
        end).()
   end
 
-  def delete do
+  def delete(video_id, headers \\ []) do
+    @player_api_url <> to_string(video_id)
+    |> HTTPoison.delete(headers)
+    |> case do
+        {:ok, %{body: raw, status_code: code }} -> {code, raw}
+        {:error, %{reason: reason}} -> {:error, reason}
+      end
+    |> (fn {ok, body} ->
+          body
+          |> Poison.decode(keys: :atoms)
+          |> case do
+            {:ok, parsed} -> {ok, parsed}
+            _ -> {:error, body}
+          end
+       end).()
   end
 end
 
