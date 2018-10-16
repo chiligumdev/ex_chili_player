@@ -4,6 +4,31 @@ defmodule Player do
   defmacro __using__(_) do
     quote do
       @player_api_url "https://player.chiligumvideos.com/api/videos/"
+
+      @doc """
+      Returns a collection of videos belonging to the owner of the informed token
+
+      ## Example
+
+          iex> ChiliPlayer.videos([token: 'my_awesome_token'])
+          {200,
+           %{
+             activated: true,
+             created_at: "2018-10-15T17:41:08.874-03:00",
+             data: "https://s3.amazonaws.com/awesome_video_url.mp4",
+             id: 5350,
+             player_url: "https://player.chiligumvideos.com/awesome_player_url",
+             postback_url: nil,
+             preserve_original_file: true,
+             teaser_id: nil,
+             wartermark_start: nil,
+             watermark_duration: nil,
+             watermark_image_url: nil,
+             watermark_link: nil,
+             watermark_position: nil
+           }}
+
+      """
       def videos(headers \\ []) do
         @player_api_url
         |> HTTPoison.get(headers)
