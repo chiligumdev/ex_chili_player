@@ -7,6 +7,7 @@ defmodule ChiliPlayer.MixProject do
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      description: description(),
       deps: deps()
     ]
   end
@@ -25,5 +26,9 @@ defmodule ChiliPlayer.MixProject do
       {:poison, "~> 3.1"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false}
     ]
+  end
+
+  defp description do
+    "Basic Elixir lib to access chiligum videos web player."
   end
 end
