@@ -70,7 +70,7 @@ defmodule Player do
 
       ## Example
 
-          iex> ChiliPlayer.videos(1234, [token: 'my_awesome_token'])
+          iex> ChiliPlayer.video(1234, [token: 'my_awesome_token'])
           {200,
            %{
              activated: true,
@@ -111,7 +111,7 @@ defmodule Player do
       Its mandatory send headers with a valid token information.
 
       ## Example
-          iex> ChiliPlayer.upload(%{data: "https://s3.amazonaws.com/my_owesome_video.mp4", name: "My Owesome Video", preserve_original_file: false}, [token: "dc85c040556c5dc46f498cf8", "Content-Type": "application/json"])
+          iex> ChiliPlayer.upload(%{data: "https://s3.amazonaws.com/my_owesome_video.mp4", name: "My Owesome Video", preserve_original_file: false}, [token: "my_awesome_token"])
 
           {200,
            %{
