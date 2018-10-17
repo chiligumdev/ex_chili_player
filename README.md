@@ -95,7 +95,7 @@ If video_id exists this call returns all information about the requested video, 
 ### Upload video
 Send a POST request with options map with data to upload videos in Chiligum Player Api. Its mandatory send headers with a valid token information.
 
-    ChiliPlayer.upload(%{data: "https://s3.amazonaws.com/my_owesome_video.mp4", name: "My Owesome Video", preserve_original_file: false}, [token: "dc85c040556c5dc46f498cf8"])
+    ChiliPlayer.upload(%{data: "https://s3.amazonaws.com/my_owesome_video.mp4", name: "My Owesome Video", preserve_original_file: false}, [token: "my_awesome_token"])
 
 This method returns all information displayed at 'Get a specific video' topic.
 
