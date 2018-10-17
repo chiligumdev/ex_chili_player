@@ -36,9 +36,6 @@ defmodule ChiliPlayer.MixProject do
   defp package() do
       [
         name: "chili_player",
-        # These are the default files included in the package
-        files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                  license* CHANGELOG* changelog* src),
         licenses: ["Apache 2.0"],
         links: %{"GitHub" => "https://github.com/chiligumdev/ex_chili_player"}
       ]
