@@ -112,5 +112,5 @@ If you want to delete a previous uploaded video, you just need to pass the id of
 
     ChiliPlayer.delete(1234, [token: "my_awesome_token"])    
 
-If the video_id is valid, this method returns the message `{200, %{msg: "deleted"}}`
+If the video_id is valid, this function returns the message `{200, %{msg: "deleted"}}`
 
