@@ -1,5 +1,5 @@
 # ChiliPlayer
-Lib to easily call [Chili Player API](https://player.chiligumvideos.com/) [Documentarion](https://hexdocs.pm/chili_player/0.1.0/ChiliPlayer.html)
+Lib to easily call [Chili Player API](https://player.chiligumvideos.com/) - ([Documentarion])(https://hexdocs.pm/chili_player/0.1.0/ChiliPlayer.html)
 
 ## Installation
 
