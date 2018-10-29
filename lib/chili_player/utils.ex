@@ -20,6 +20,17 @@ defmodule Utils do
       end
 
       def content_type([_| t]), do: content_type(t)
+
+      def decode({ok, body, "application/json"}) do
+        body
+        |> Poison.decode(keys: :atoms)
+        |> case do
+            {ok, parsed} -> {ok, parsed}
+            _ -> {:error, body}
+        end
+      end
+
+      def decode({ok, body, _}), do: {ok, body}
     end
   end
 end
