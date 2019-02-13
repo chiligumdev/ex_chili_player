@@ -2,6 +2,10 @@ defmodule ChiliPlayerTest do
   use ExUnit.Case
   doctest Player
 
+  setup_all do
+    
+  end
+
   test "GET videos with invalid token" do
     assert ChiliPlayer.videos([token: "some_invalid_token"]) == {:error, "Unauthorized - Check your credentials"}
   end
