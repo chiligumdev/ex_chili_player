@@ -25,6 +25,7 @@ defmodule ChiliPlayer.MixProject do
     [
       {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"},
+      {:figaro_elixir, "~> 1.0.0"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false}
     ]
   end
