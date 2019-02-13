@@ -23,3 +23,5 @@ erl_crash.dump
 chili_player-*.tar
 
 *.beam
+
+/config/*.yml
